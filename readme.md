@@ -1,5 +1,5 @@
-#[My Website](siddsax.github.io)
-###Basic template [Solid State](http://html5up.net/solid-state)
+                                       #[My Website](siddsax.github.io)
+                      ###Basic template [Solid State](http://html5up.net/solid-state)
 ---
 The site has been edited by me in one twlight at my home (thanks to my Mom and Dad who tolerated me keeping the lights on at night)
 
