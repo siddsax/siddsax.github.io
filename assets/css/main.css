@@ -1711,7 +1711,7 @@
 			border-bottom: 0;
 			display: block;
 			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 0.8em;
+			font-size: 1em;
 			font-weight: 700;
 			letter-spacing: 0.1em;
 			margin: 0 0 2em 0;
@@ -2755,7 +2755,7 @@
 			}
 
 		#header nav {
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: FontAwesome;
 			font-size: 0.8em;
 			font-weight: 700;
 			height: 3em;
@@ -2873,7 +2873,9 @@
 		}
 
 /* Menu */
-
+    #t1{
+    	tab-size:16;
+    }
 	#page-wrapper {
 		-moz-transition: -moz-filter 0.25s ease;
 		-webkit-transition: -webkit-filter 0.25s ease;
