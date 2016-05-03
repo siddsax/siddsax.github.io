@@ -1624,7 +1624,7 @@
 /*main background of the site*/
 	body {
 		background-color: #71789b;
-		background-image: linear-gradient(to top, rgba(96,70,69, 0.8), rgba(96,70,69, 0.8)), url("../../images/1.jpg");
+		background-image: linear-gradient(to top, rgba(96,70,69, 0.8), rgba(96,70,69, 0.8)), url("../../images/8.jpg");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
@@ -2653,10 +2653,10 @@
 		flex-wrap: wrap;
 		margin: 0 0 2em 0;
 	}
-
+/*colors for the article windows*/
 		.features article {
 			padding: 1.75em 1.75em 0.1em 1.75em ;
-			background-color: #353849;
+			background-color: #931d03;
 			border-radius: 5px;
 			margin: 1.5em 3em 1.5em 0;
 			width: calc(50% - 1.5em);
