@@ -1624,7 +1624,7 @@
 /*main background of the site*/
 	body {
 		background-color: #71789b;
-		background-image: linear-gradient(to top, rgba(96,70,69, 0.8), rgba(96,70,69, 0.8)), url("../../images/1.jpg");
+		background-image: linear-gradient(to top, rgba(36,53,93, 0.5), rgba(36,53,93, 0.5)), url("../../images/1.jpg");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
@@ -2727,6 +2727,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
+		/*the trasitioning header currently in purple color*/
 		background-color: rgba(132,100,188, 0.95);
 		height: 3.5em;
 		left: 0;
@@ -3276,7 +3277,7 @@
 /*Color of the about section*/
 	.wrapper {
 		/*background-image: url("images/4.jpg");*/
-		background-image: linear-gradient(to top, rgba(96,70,69, 0.8), rgba(96,70,69, 0.8)), url("../../images/4.jpg");
+		background-image: linear-gradient(to top, rgba(36,53,93, 0.5), rgba(36,53,93, 0.5)), url("../../images/4.jpg");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;	
@@ -3284,9 +3285,9 @@
 		margin: 6.5em 0;
 		position: relative;
 	}
-
+      /*color of the triangular bars*/
 		.wrapper:before, .wrapper:after {
-			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 50 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%236b2506;' /%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 50 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%235d86ed;' /%3E%3C/svg%3E");
                			
                			
 
