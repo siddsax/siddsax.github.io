@@ -1,170 +1,231 @@
-<!DOCTYPE html>
-<!-- Microdata markup added by Google Structured Data Markup Helper. -->
-<html><head>
-   		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-		<title>Siddhartha Saxena</title>
-		<meta name="googlebot" content="NOODP">
-		<meta charset="utf-8"/>
-		<meta name="Sidhartha Saxena, Not your everyday guy" content="A place on the internet where you could find everything about me, as well as my personal blogs to share my views on things aroung us. So if you are googling Siddhartha Saxena for any f**king reason, this is the place for you :P "/>
-		<!-- [if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif] -->
-		<link rel="stylesheet" href="assets/css/main.css"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"/>
+---
+layout: page
+title : "Siddhartha Saxena"
+description: "Learner"
+header-img: "img/home-bg.jpg"
+---
 
-		<!-- [if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif] -->
-		<!-- [if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif] -->
-	</head>
-	<body class="">
+<!-- About Content -->
+<!-- <link rel="stylesheet" href="button/css/style.css"> -->
+<section id="about">
+	<div>
+		<p>
+			Hi, I am an aspiring Machine Learning Researcher looking to make a dent in this tiny world.
+		</p>
+		<p>
+			I am presently pursuing undergrad studies in the field of Computer Science at I.I.T. Kanpur. I believe in making a difference, still wondering if anything matters at all. I like to think about things and the meaning behind them hence I love to analyze stuff, I have even been able to make a career out of it as a statician at heart and ML Practioner by brain.
+		</p>
+		<p>
+			Apart from that I am avid FC Barcelona, as can be seen from the favicon of this site. I like to read articles, write for Vox Populi, IITK's Journalism Body and cherish suspence thrillers. 
+		</p>
+	</div>
+</section>
 
-		<!--  Page Wrapper  -->
-			<div id="page-wrapper">
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+	<div class="row">
+		<div class="text-center">
+			<h2>Here are my past Projects and Internships.</h2>
+			<hr>
+		</div>
+	</div>
 
-				<!--  Header  -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">My site, My rules !</a></h1>
-						<nav>
-							<pre id="t1"><a href="MyExperiences.pdf" alt="Siddhartha Saxena's CV or Resume">My Experiences</a><a href="MyBlog.html">My Blog</a></pre>
-						</nav>
-					</header>
+	<div class="row">
+		{% for item in site.portfolio %}
+		<div class="col-sm-4 portfolio-item">
+			<a href="#{{ item.anchor }}" class="portfolio-link" data-keyboard="true" data-toggle="modal">
+				<div class="caption" >
+					<div class="caption-content" >
+						{{ item.title }}<p></p>
+						<i class="fa fa-search-plus"></i><p></p>
+						Category: {{ item.category }}
+					</div>
+				</div>
+				<img src="{{ item.image }}" width="300" >
+			<!-- class="img-responsive" alt="" -->
+			</a>
+		</div>
+		{% endfor %}
+	</section>
 
-				<!--  Menu  -->
-<!--  					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
+	<!-- Portfolio Modals -->
+	<section id="portfolio modals" background="img/proj-bg.jpg">
+
+		{% for item in site.portfolio %}
+		{% if item.anchor == "yodlee" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
 						</div>
-					</nav>
-  -->
-				<!--  Banner  -->
-
-
-
-					<section id="banner">
-						<div class="inner">
-						    <a href="#"><p><span itemscope itemtype="http://schema.org/Article" class="image left"><img itemprop="image" src="images/fb.jpg" alt="Siddhartha Saxena" style="width:200px; height:200px"/></span></p></a>
-							<!--  <div class="logo"><span class="icon fa-diamond"></span></div>  -->
-							<h2>This is Siddhartha Saxena</h2>
-							<p>Machine Learner,Computer Vision,Football Enthusiast,Writer,Explorer.</p>
+					</div>
+				</div>
+				<div class="container">
+					<!-- Image of the project -->
+				  <center><img src="{{ item.image_rec }}" width="500"></center>
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<!-- Three part description -->
+					<div class="row">
+						<div class="col-md-5" style="margin:40px;margin-left:-230px">
+							<h4>Preface</h4>
+							<p align="justify">{{ item.intro }}</p>
 						</div>
-					</section>
-
-				<!--  Wrapper  -->
-					<section id="wrapper">
-
-					        <section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major"><center>About Me</center></h2>
-									<p>Hey There, Myself Siddhartha Saxena or Siddsax if any constraints to shorten it up. A sophomore at IIT Kanpur majoring in Computer Science and Engineering. Looking for something to have a long lasting impact on Mankind, let alone or society though it may be in any positive form as long as it fascinates me. I like to spend my time on reading about new stuffs, psychology, playing Table Tennis, researching for my next article, watching the next FC Barcelona game and yes! studying :P  </p>
-									
-								</div>
-							</section>
-
-						<!--  One  -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/2016-03-20-180138.jpg" alt="AUV-IITK"/></a>
-									<div class="content">
-										<h2 class="major">AUV-IITK (Autonomous Underwater Vehicle) </h2>
-										<h3 class="major">Software Subsystems </h3>
-										<h4 class="major">December 2015 - PRESENT</h4>
-										<li>Developed a Buoy Detector which detects the distance of a buoy using OpenCV.</li>
-                                        <li>Designed an L-shaped gate detector to locate the current position of the vehicle with respect to the gate as well as giving the center of the gate to move the vehicle towards it.</li>
-                                        <li>Worked under ROS framework as the main backbone for the software subsystem.</li>
-										<br/><a href="https://github.com/siddsax/auv_my_work" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-
-						<!--  Two  -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/ML.jpg" alt="Machine Learning"/></a>
-									<div align="leftMy">
-									<div class="content">
-										<h2 class="major">Introduction to Machine Learning</h2>
-										<h3 class="major">ACA Project</h3>
-										<h4 class="major">February 2016 - Present</h4>
-										<li>Applied Natural Language Processing to make a spam classifier and classifying movie reviews dataset part of NLTK corpus as positive or negative based on Naive Bayes Classifier.</li><li>Applying Principal Component Analysis using eigenvalues of a dataset of several images of a given person for Facial Recognition in Matlab.</li><li>Did Handwriting Recognition on MNIST dataset using sigmoid neurons, back-propagation, cross entropy and quadratic cost function using Numpy.</li>
-										<br/><a href="https://github.com/siddsax/ACA" class="special">Learn more</a>
-									</div>
-									</div>
-								</div>
-							</section>
-
-						<!--  Three  -->
-<!--  							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
-  -->
-						<!--  Four  -->
-							
- 
-					</section>
-
-				<!--  Footer  -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Have A Challenge, I am up to the task ! </p>
-							<form method="post" action="MAILTO:ss.siddharthasaxena@gmail.com">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name"/>
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email"/>
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message"/></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									Siddhartha Saxena<br/>
-									<a href="https://www.google.co.in/maps/dir/''/Hall+2+IIT+Kanpur+Google+maps/@26.5107753,80.1597099,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x399c36ffac6f195b:0x548c444ef881131b!2m2!1d80.2297502!2d26.5107924">B-116, Hall 2<br/>
-									IIT Kanpur
-									</a>
-								</li>
-								<li class="fa-phone">7054124184</li>
-								<li class="fa-envelope"><a href="ss.siddharthasaxena@gmail.com">E-Mail</a></li>
-								<!--  <li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>  -->
-								<li class="fa-facebook"><a href="https://www.facebook.com/siddhartha.saxena.71">My Facebook Page</a></li>
-                                <li class="fa-github"><a href="https://github.com/siddsax">My Codes</a></li><a href="https://github.com/siddsax">
-								<!--  <li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>  -->
-							</a></ul><a href="https://github.com/siddsax">
-							</a><ul class="copyright"><a href="https://github.com/siddsax">
-								<li>© Siddhartha Saxena. All rights reserved.</li></a><li><a href="https://github.com/siddsax">Design: </a><a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
+						<div class="col-md-5" style="margin:40px">
+							<h4>Problem</h4>
+							<p align="justify">{{ item.problem }}</p>
 						</div>
-					</section>
-
+						<div class="col-md-5" style="margin:40px;margin-right:-230px" >
+							<h4>Results</h4>
+							<p align="justify">{{ item.results }}</p>
+						</div>		
+					</div>
+					<div class="row">	
+					<!--  Links to report -->
+						<div class="col-md-7" style="margin:40px;margin-left:-200px">
+							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
+							<a href={{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
+						</div>
+					</div>	
+				</div>
 			</div>
+		</div>
+		{% endif %}
+		{% if item.anchor == "flows" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<!-- Image of the project -->
+				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<!-- Three part description -->
+					<div class="row">
+						<div class="col-md-4" style="margin:40px;margin-left:-230px">
+							<h4>Preface</h4>
+							<p align="justify">{{ item.intro }}</p>
+						</div>
+						<div class="col-md-6" style="margin:40px">
+							<h4>Abstract</h4>
+							<p align="justify">{{ item.problem }}</p>
+						</div>
+						<div class="col-md-4" style="margin:40px;margin-right:-230px" >
+							<h4>Results</h4>
+							<p align="justify">{{ item.results }}</p>
+						</div>		
+					</div>
+					<div class="row">	
+					<!--  Links to report -->
+						<div class="col-md-7" style="margin:40px;margin-left:-200px">
+							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
+							<a href={{ item.report }}><button type="button" class="btn btn-default">Arxiv Preprint</button></div></a>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if item.anchor == "auv" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<!-- Image of the project -->
+				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<!-- Three part description -->
+					<div class="row">
+						<div class="col-md-5" style="margin:40px;margin-left:-230px">
+							<h4>Preface</h4>
+							<p align="justify">{{ item.intro }}</p>
+						</div>
+						<div class="col-md-5" style="margin:40px">
+							<h4>Abstract</h4>
+							<p align="justify">{{ item.problem }}</p>
+						</div>
+						<div class="col-md-5" style="margin:40px;margin-right:-230px" >
+							<h4>Results</h4>
+							<p align="justify">{{ item.results }}</p>
+						</div>		
+					</div>
+					<div class="row">	
+					<!--  Links to report -->
+						<div class="col-md-5" style="margin:40px;margin-left:-250px">
+							<a href= {{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
+						<div class="col-md-5" style="margin:40px">
+							<a href= {{ item.utube }}><button type="button" class="btn btn-default">Youtube</button></div></a>
+						<div class="col-md-5" style="margin:40px;margin-right:-250px">
+							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-left:-150px">
+							<a href= {{ item.website }}><button type="button" class="btn btn-default">Website</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-right:-150px">	
+							<a href={{ item.ppt }}><button type="button" class="btn btn-default">Presentation</button></div></a>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if item.anchor == "docclustering" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<!-- Image of the project -->
+				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<!-- Three part description -->
+					<div class="row">
+						<div class="col-md-4" style="margin:40px;margin-left:-230px">
+							<h4>Preface</h4>
+							<p align="justify">{{ item.intro }}</p>
+						</div>
+						<div class="col-md-6" style="margin:40px">
+							<h4>Abstract</h4>
+							<p align="justify">{{ item.problem }}</p>
+						</div>
+						<div class="col-md-4" style="margin:40px;margin-right:-230px" >
+							<h4>Results</h4>
+							<p align="justify">{{ item.results }}</p>
+						</div>		
+					</div>
+					<div class="row">	
+					<!--  Links to report -->
+						<div class="col-md-7" style="margin:40px;margin-left:-200px">
+							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
+							<a href={{ item.report }}><button type="button" class="btn btn-default">Arxiv Preprint</button></div></a>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</section>
+<!-- 
+    {% assign i = forloop.index | modulo:5 %}
+    <h2>{{ i }}</h2>
+  	{% if i == 4 %}
+  		<img src="as" align="left" width="300">
+	    <h2>{{ i }}</h2>
+		{% endif %}
 
-		<!--  Scripts  -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!-- [if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif] -->
-			<script src="assets/js/main.js"></script>
-
-	
-</body></html>
+ -->

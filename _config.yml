@@ -1,0 +1,43 @@
+# Site settings
+title: Peak into me.
+description: "Online Blog and Portfolio of Siddhartha Saxena aka siddsax"  # used in site head
+
+# register on google analytics and replace this token
+google_analytics: UA-102502800-1
+# disque comments are broken if you send http:// along with url, this url is same as the one given on disqus
+# Deleting the value would remove it from footer.
+disqus_url: siddharthasaxena.com
+disqus_id: siddhartha_saxena
+# register on feedburner and replace this url. Deleting the value will remove it from footer.
+# feedburner_url: https://feedburner.google.com/fb/a/mailverify?uri=programmer-wannabe&amp;loc=en_US
+
+# footer details. Deleting the value would remove it from footer.
+github_username:  siddsax
+facebook_username:  siddhartha.saxena.71
+email: ss.siddharthasaxena@gmail.com
+# stackoverflow_username: 8530162/siddhartha-saxena 
+twitter_username : siddsax
+copyright_name: Siddhartha Saxena
+linkdin_name: siddsax
+rss : true
+
+# used for portfolio on home page
+collections:
+  - portfolio
+
+# used to estimate reading time
+wpm: 150
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+port: 8888
+permalink: /blog/:title
+
+# jekyll-paginate. for paginating blog posts.
+paginate: 5
+paginate_path: blog/page:num
+
+# gem dependencies
+gems: [jekyll-paginate, jekyll-feed, jekyll-gist]
