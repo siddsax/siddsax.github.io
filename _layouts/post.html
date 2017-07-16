@@ -3,16 +3,16 @@ layout: default
 ---
 
 <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/{{ page.header-img }}')">
+<span itemscope itemtype="http://schema.org/Article"><header class="intro-header" style="background-image: url('/{{ page.header-img }}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>{{ page.title }}</h1>
+                    <h1 itemprop="name">{{ page.title }}</h1>
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta" style='margin-top:0.5em;'>Posted by {{ page.author }} on {{ page.date | date: "%A, %B %-d, %Y" }}
+                    <span class="meta" style='margin-top:0.5em;'>Posted by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span> on 	{{ page.date | date: "%A, %B %-d, %Y" }}
                     </span>
                     <span class="meta" style='margin-top:0.5em;'> Tags: {% for tag in page.tags %}<a href="/blog/tags/{{ tag }}"><i class="fa fa-tag"></i> {{ tag }}</a> {% endfor %} </span>
                     <span class="meta" style='margin-top:0.5em;'>
@@ -31,7 +31,7 @@ layout: default
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                {{ content }}
+                <span itemprop="articleBody">{{ content }}</span>
                 <br>
                 {% if page.comments %}
                     {% include disqus_comments.html %}
