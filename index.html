@@ -218,6 +218,26 @@ header-img: "img/home-bg.jpg"
 			</div>
 		</div>
 		{% endif %}
+		{% if item.category == "Talk" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<center><img src="{{ item.image }}" width="800"></center>
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<p align="justify">{{ item.details }}</p>
+					<center><a href={{ item.report }}><button type="button" class="btn btn-default">Presentation</button></a></center>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		{% endif %}
 		{% endfor %}
 	</section>
 <!-- 
