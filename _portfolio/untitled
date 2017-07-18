@@ -1,0 +1,253 @@
+
+ abstracts to get a feel for style and length.
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+
+Finding depth maps from images is a problem of great importance, not only they provide the depth of objects within the scene, but also essential in getting a 3D view of the scene. 
+
+With the increase in the ongoing research towards producing autonomous vehicles, it has become more important than ever to produce accurate depth maps. Several machine learning models produce excellent results for depth maps  like the work of Eigen \textit{et al.} \cite{DBLP:journals/corr/EigenF14} where they use a Multi-Scale Deep Network to produce Coarse and fine depth maps. 
+
+Although an issue that they don't consider a common but abnormal case, when the nearby object is small and a far object is large, called forced prospective. In this case the distances calculated by a monocular image might be off by a large margin. situations like these can lead to tremendous harm in an autonomous vehicle setting, hence this leads to the motivation of the problem of a distribution over depth maps for an image with varying confidence.
+
+In this work we look at the former problem of finding multiple depth maps from a pair of images which can make the system aware of the possible cases. 
+ 
+
+We can also view this problem in a slightly different way, as that of transformation of one image to another. Our goal is to produce multiple depth map from one image. Hence it is transformation of one depth map to another. This idea forms the crux of our work to produce multiple depth maps.
+
+There has been a lot of work in this area, lead by the introduction of Conditional GANs or cGANs. In their paper Isola \textit{et al.} \cite{2016arXiv161107004I} showed that how GANs can be used to generate images that are conditioned on an input image. This set up is ideal for image transformation. 
+
+
+% Several Problems in Vision can be treated as the transformation of one image into another image, examples of this approach are converting black and white images to colored and outlines of objects to their RGB images. One such problem is what we consider here, that is producing Depth Maps from monocular RGB images. 
+
+% Convolutional Neural Networks or CNNs have become the most important tool in various Computer Vision models, but still, a lot of effort is required in choosing the right loss function to minimize as well as the right architecture. Squared loss error is not the best tool as it leads to blurry results due to averaging.
+
+% Over the past couple of years, the introduction of GANs \cite{2014arXiv1406.2661G} has led to substantial improvement in sharpness of results in generative models. They have been extensively studied in the last couple of years and several variations of them have been produced. 
+
+% The basic approach behind GANs is that it involves two CNNs, one of which is the generator and the other is a discriminator. The job of the generator is to generate images while the discriminator has to tell whether the image is real or fake, i.e. produced from the generator. Thus the discriminator can reject the samples that are fake and accept only the ones that are sharp. A trade-off for this is that GANs are infamously difficult to train as one has to balance the strength of the generator and discriminator as an imbalance between can lead to the generator fooling the discriminator to accept sub-standard images or the discriminator rejecting all the generated images. Although a lot of work has been done on how to train GANs as well \cite{2016arXiv160603498S} \cite{2017arXiv170107875A}.
+
+% Coming to the problem of the image to image transformation, we need to augment GANs for this problem and as shown by Isola et al.  in their paper, conditional GANs provide an excellent way to deal with this problem. 
+
+% Our contributions in this paper are manifold. First of all, we extend the conditional GANs model\cite{2016arXiv161107004I} to produce depth maps from monocular images. Secondly, we introduce a new synthetic data for depth estimation which is ideal for producing several possible depth maps of a single image and finally, we produce multiple depth maps from a single image using conditional GANs.
+
+%-------------------------------------------------------------------------
+\section{Related Work}
+
+\subsection{Generative Adverserial Networks}
+
+Generative Adverserial Networks or GANs have obtained remarkable results on various Computer Vision tasks, they provide much more sharper outputs than previously possible techniques like Variational Auto Encoders \cite{2013arXiv1312.6114K}. The key to their sucess is that they do not use a squared loss function like the VAEs but rather use an adverserial loss which optimizes the generator and discriminator, this makes the generator produce more realistic images in order to fool the discriminator.   
+
+In the GAN setting, the output is unstructured, in a way that it doesn't depend on an input image, whereas conditional GANs are dependent on the input image and some noise. Conditional GANs take in as input an image and some noise as shown in the image 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{cGAN_method.pdf}
+\caption{An illustration of conditional GANs [Figure take from \cite{2016arXiv161107004I}]}
+\end{figure}
+
+In the conditional GANs, one has to give two inputs to the Generator. One is the image on which we want to condition the output and other is a noise. The discriminator is then fed the generator's output along with the input on which the generator was conditioned. Thus we get a joint probability distribution over the input and noise. 
+
+The loss function that we used consists of two terms, the cGAN loss and an L1 loss. The L1 loss is useful here as it provides a structure to the image generated whereas the cGAN error provides the sharpness as the Discriminator rejects the blurry images. 
+
+\begin{equation}
+\begin{split}
+L_{cGANS} = \displaystyle \mathop{\mathbb{E}}_{x\sim P_{data}(x)} 
+[log (Discriminator(x,y))]+\\ 
+\displaystyle \mathop{\mathbb{E}}_{x\sim P_{data}(x),z\sim Uniform(z) } [log (1-Discriminator(x, \\
+Generator(x,z))]
+\end{split}
+\end{equation}
+
+For our problem of generating Depth Maps, x is the RGB Monocular image, y is the Ground truth Depth Map and z is the noise that is being sampled from the Uniform distribution.
+Here the Discriminator is also fed x, i.e. the ground truth image as it helps to further condition the generator output on x. 
+
+But their work faces a major issue, which is that the generator learns to ignore the noise and produces discriminative results rather than a joint distribution, hence it can not be used to produce multiple depth maps. One may think about varying the noise component of the conditional GAN to produce multiple depth maps from a single image but the problem with this approach is that it leads to a deterministic output. cGANs learn to simply ignore noise and then produce a discriminative output as mentioned above, hence a different approach is needed for overcoming this issue, our work deals with this problem by using an heuristic to produce multiple depth maps.
+
+\section{Method}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Our contribution is divided into three broad parts, first of all we generate depth maps from monocular RGB images, this leads us to the problem of multiple depth maps. When we delve deeper into these two problems, there lies a missing link between, that is any machine learning model needs to know how it needs to augment the image in order to produce several depth maps. Thus we need images similar looking RGB images but have different depth maps, this is a major bottleneck as there is no present dataset having large number of images that can cater to this end, hence it motivated us to produce our own artificial dataset. But just showing our model's work on an artificial dataset wasn't enough, hence we also used few images from the KITTI dataset which provide images that has the required quality due to motion of cars to further show our model's generalizability.   
+
+\subsection{Producing Depth Maps} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+Depth Maps are the images that contain the depth information of the objects in the scene and they are pixel to pixel mapping of the input image. In the conditional GAN setting we input the monocular RGB image and it conditions the output image on it which is the corresponding depth map.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.45\textwidth]{1.png}
+\includegraphics[width=0.45\textwidth]{2.png}
+\includegraphics[width=0.45\textwidth]{3.png}
+\includegraphics[width=0.45\textwidth]{4.png}
+\caption{Results on the Dataset. From left to right we have cGANs output, Ground Truth and Monocular RGB image }
+\end{figure}
+
+\subsection{Architecture}
+
+We have adopted our architecture from the UNet  \cite{2015arXiv150504597R}. It has an encoder-decoder type of structure but with added connection between the initial and final layers. These links are very useful in the conditional GAN setting because they help to retain the structure of the input image. Its Graph is appended at the end. 
+
+\subsection{Creating the Multi Depth Dataset} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+In our experiments, we found out that even after using different architectures to provide noise, one can't produce stochastic output with cGANs. This may be explained in this way that while training in the setting as described above, there is only one output corresponding to one input. Hence it is intuitive that the GAN would learn to ignore the noise. Moreover, it is necessary to provide information to the model about how we want to augment a given depth map in some way of supervision. This formed out motivation to create a new dataset from scratch. The dataset needed to be such that there are multiple depth maps for a single image but this feature is very difficult to create in real life even though it occurs several times.
+
+Our Multi-Depth Dataset is a synthetic dataset that consists of several depth maps for a single RGB image. To achieve this we use the principle of forced perspective for producing the configurations as shown in the figure \cite{forcedPerspective} below.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{fig01.png}
+\caption{Forced perspective on 2 planes Figure taken from  \cite{forcedPerspective} }
+\end{figure}
+
+As illustrated in Figure 2, the planes are at different distances from the image and are of different sizes but when viewed from the viewpoint, they seem to look at the same size. We face this problem several times in real life and a traditional model is not trained for dealing with it and can give absurd results. Hence we created 3 different scenes using Unreal Engine 4. 
+
+We place an object in the middle of the screen and then varied its distance from the center of the view point, this led to a smaller appearance on the screen but we also increased its size which lead to a near constant looking RGB figure. Whereas the depth map was very different for the images. This way we achieved our goal of having multiple depth maps within the realm of possibility i.e, what can happen in real life.
+
+This dataset can even be expanded to a larger scale using a large number of virtual environments which can be obtained from games or architectural models. 
+
+One scene from the dataset has been illustrated below.
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.45\textwidth]{img_1.png}
+\includegraphics[width=0.45\textwidth]{img_30.png}
+\includegraphics[width=0.45\textwidth]{img_54.png}
+\includegraphics[width=0.45\textwidth]{img_87.png}
+\caption{A library scene where the stool is the object moving}
+\end{figure}
+
+As we can see in this example, the stool seems to be still and remain the same size, whereas, in reality, we changed its distance from the camera and its size, decreasing size with decreasing distance which leads to the desired effect. Apart from using Unreal Engine we also used the library UnrealCV \cite{qiu2016unrealcv} which can produce high quality, realistic depth maps as well as object instance masks. Thus we can produce high-quality datasets that are not possible or very difficult to collect as in our case making this dataset is the first of its kind.
+
+\subsection{Producing multiple Depth Maps}
+
+The key idea that we introduce to produce multiple depth maps is that conditional GANs are ideal to produce one image from another, while retaining most of the input image. GANs have a special feature that they learn a distribution over the input noise, but in the case of conditional GANs this is not the case, the biggest problem with cGANs is that they learn a deterministic output over the input data, this is also the biggest problem with the work of Isola \textit{et al.} \cite{2016arXiv161107004I}. For example in their work, the output for an input image will always be the same image as the generator learned to ignore the noise, hence they removed adding noise. We take a different approach for this problem, instead of trying to make the generator sensitive to noise, we create a chain of images.
+
+It is done in a way such that input depth map to one GAN, is the output of another GAN and so on. Hence we can obtain a variety of samples of varying depth of the object(s) of interest.  To train our GAN we condition it with a depth map and is another depth map corresponding to the same image albeit with some permutation of it. The method is summarized in Figure 6.
+
+\begin{figure*}
+\centering
+
+\includegraphics[width=1\textwidth]{drawing.png}
+\caption{Procedure of producing multiple depth Maps from few input images}
+\end{figure*}
+
+Hence we are applying GANs for a two-fold job. The first task is to produce depth maps from their corresponding RGB Map and then we train the GANs on a few of these depth maps to produce as many numbers of depth maps as we want. This helps us to achieve the goal that wasn't possible by adding noise. 
+We explored this method for depth map generations, although this technique can be used in various settings where we want to generate sequential data, for example in video sequence generation and image editing. 
+
+
+\section{Experiments}
+
+\subsection{Producing Depth Maps}
+We first experimented the results of the Depth GANs on the B3DO: Berkeley 3D Object Dataset \cite{Janoch2013}. The dataset consists of 847 indoor scenes, including monocular RGB images and their corresponding depth maps which are obtained via a Kinect device.
+
+When compared to other models like the work of David Eigen et al. \cite{DBLP:journals/corr/EigenF14} , we observed that the results were very competitive on simpler images. Although for more detailed Depth Maps the cGANs produced inferior results as compared to their model. The actual power of GANs resides in their flexibility, one of which we highlighted in a way of producing multiple depth maps from a single image.
+
+We applied our model on the Multi-Depth artificial dataset and the results were much more sharper as seen in Figure 5.
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.45\textwidth]{a.png}
+\includegraphics[width=0.45\textwidth]{b.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{Producing Depth Maps on our Dataset. From left to right we have the Monocular RGB image, Generator output and the Ground Truth }
+\end{figure}
+
+\subsection{Multi-Depth artificial Dataset}
+
+The major part of our work was on producing multiple depth maps from as few as possible images and we used our Artificial Dataset as well as the KITTI dataset, experimenting with different number of input images and observed that the results with just a single transformation image as shown in the figure below produced remarkably good results, although on increasing the number of input samples, the improvement was evident which also makes sense.
+
+In order to quantify the error, we used a L1 norm error that uses the difference between the target and input image. We calculated the average of the modulus of the difference and then averaged over the whole image, ranging from 0 to 255 as the value of a pixel. It was possible to calculate this error as we had several depth maps for the scene, tabulated in table 1.  
+
+A remarkable propery of the model was that it was able to identify the object even when it was moving laterally in the RGB image and at a position much more different from the training data as shown in Figure 7.
+
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.45\textwidth]{N1.png}
+\includegraphics[width=0.45\textwidth]{N2.png}
+\includegraphics[width=0.45\textwidth]{NT.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{When tested on a scene with translation along with varying depth. The first two are test images for a model trained on the 3rd image}
+\end{figure}
+
+
+\begin{figure*}
+\centering
+
+\includegraphics[width=0.8\textwidth]{T1.png}
+\includegraphics[width=0.8\textwidth]{T2.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{Results on one of scene with just one training input, from left to right Input, Output, Target, difference between target and output}
+\end{figure*}
+
+\subsection{KITTI}
+
+The KITTI dataset offers a real life setting when it can happen several times that the nearby object is smaller and size or the far away object is larger, this is can even be a reason for accidents as well in a self driving car setting, having multiple depth maps in such an environment can be a really helpful. As cars that are nearby and away seem similar in shape we cropped and re-sized the images and then gave as input to our model, the results on this dataset also showed how the model was able to identify the object and to produce a chain of depth maps   
+
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.5\textwidth]{K1T.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{Training Sample 1}
+\end{figure}
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.5\textwidth]{K1.png}
+\caption{Multiple Depth Maps from KITTI sample 1}
+\end{figure}
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.5\textwidth]{K6T.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{Training Sample 2}
+\end{figure}
+
+\begin{figure}
+\centering
+
+\includegraphics[width=0.5\textwidth]{K6.png}
+\caption{Multiple Depth Maps from KITTI sample 2}
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+Scene & 1 transition image & 3 transition images \\
+\hline\hline
+A & 8.33 & 7.48 \\
+B & 13.28 & 10.2\\
+C & 8.1 & 5.4\\
+D & 8.61 & 5.5\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Quantitative Results on Multi-Depth artificial Dataset}
+\end{table}
+
+\begin{figure*}
+\centering
+
+\includegraphics[width=1\textwidth]{chain.png}
+\includegraphics[width=1\textwidth]{chain_2.png}
+\includegraphics[width=1\textwidth]{chain_3.png}
+\includegraphics[width=1\textwidth]{chain_4.png}
+% \includegraphics[width=.45\textwidth]{S2.png}
+% \includegraphics[width=.45\textwidth]{S3.png}
+% \includegraphics[width=0.5\textwidth]{img0245.jpg}
+\caption{Generating Multiple Depth Maps. The left most image is the training image used along with another image, from left to right are the output of our model when given the previous image as input}
+\end{figure*}
+
+\section*{Discussions and Future work}
+We used conditional GANs for the problem of Depth Estimation and showed that they are able to compete with the traditional CNN based approaches \cite{DBLP:journals/corr/EigenF14}. We explored that the major positive GANs offer in this domain is their flexibility. We created the Multi-Depth Dataset that is the first of its kind, creating a large dataset of such type can help in getting better generalizability of any model in this domain. Further, we were able to produce Depth Maps of varying depth from a as low as couple of images, although creating a distribution over noise still remains a problem that we weren't able to overcome in this work. Some novel approaches have been taken for tackling this, for example, Invertible Conditional GANs for image editing by Perarnau \textit{et al}.\cite{DBLP:journals/corr/PerarnauWRA16} where they transform the input to two separate encoders to create 2 separate latent variables for the image and then replace one of them that represent facial features by noise to vary the output. 
+
+Another avenue for building up on this work is to add a confidence label to the different depth maps. Getting a confidence value can tremendously help another model to take a decision. 
