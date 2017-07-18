@@ -4,10 +4,10 @@ title: AUV
 internal_title: Autonomous Underwater Vehicle  
 image: img/portfolio/auv.jpg
 image_rec: img/portfolio/yodlee_rec.jpg
-report: ""
+report: "https://cse.iitk.ac.in/users/siddsax/Reports/AUV.pdf"
 website: "http://auviitk.com/"
 utube: "https://www.youtube.com/channel/UCBaRXMUGSoJeHLFBMa0q7Vg"
-ppt: ""
+ppt: "https://cse.iitk.ac.in/users/siddsax/Reports/AUV-DORD.pdf"
 code: "https://github.com/AUV-IITK" 
 
 intro: Autonomous Underwater Vehicle or AUV-IITK is one of the major robotics project, mentored by Prof. KS Venkatesh and Prof. Sachin Y Shinde. The aim of this project is to create a fully an underwater vehicle that can perfrom a set of tasks underwater without any human control. I was the Computer Vision subdivision head for the period of January 2016 to December 2016 

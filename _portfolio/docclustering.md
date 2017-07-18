@@ -4,7 +4,7 @@ title: Interactive Clustering
 internal_title: User feedback Interactive Clustering   
 image: img/portfolio/interClust.png
 image_rec: img/portfolio/yodlee_rec.jpg
-report: ""
+report: "https://cse.iitk.ac.in/users/siddsax/Reports/MLT_report.pdf"
 code: "https://github.com/siddsax/Interactive_Bayesian_Clustering"  
 
 intro: This project was part of course CS771, Machine Learning Techniquues which I did in the fall semester of 2016. A critical problem with clustering in the unsupervised domain is that one can have varied types of clustering based on input parameters and learning rates ( in case of a deterministic model ). Hence it leads to the idea of using user feedback, so that one can get the clustering of their choice. 
