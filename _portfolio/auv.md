@@ -10,7 +10,7 @@ utube: "https://www.youtube.com/channel/UCBaRXMUGSoJeHLFBMa0q7Vg"
 ppt: "https://cse.iitk.ac.in/users/siddsax/Reports/AUV-DORD.pdf"
 code: "https://github.com/AUV-IITK" 
 
-intro: Autonomous Underwater Vehicle or AUV-IITK is one of the major robotics project, mentored by Prof. KS Venkatesh and Prof. Sachin Y Shinde. The aim of this project is to create a fully an underwater vehicle that can perfrom a set of tasks underwater without any human control. I was the Computer Vision subdivision head for the period of January 2016 to December 2016 
+intro: Autonomous Underwater Vehicle or AUV-IITK is one of the major robotics project, mentored by Prof. KS Venkatesh and Prof. Sachin Y Shinde. The aim of this project is to create a fully an underwater vehicle that can perform a set of tasks underwater without any human control. I was the Computer Vision subdivision head for the period of January 2016 to December 2016
 
 problem: Applied Pose Detection via SIFT and SURF Descriptors for an L-shaped gate, identifying the angle made by it. Applied Convolutional Neural Networks for pattern detection via Tensorflow. Used OpenCV library along with ROS framework to implement various object detection algorithms.
 

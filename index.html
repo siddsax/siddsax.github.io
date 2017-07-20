@@ -199,7 +199,7 @@ header-img: "img/home-bg.jpg"
 							<p align="justify">{{ item.intro }}</p>
 						</div>
 						<div class="col-md-6" style="margin:40px">
-							<h4>Appoach</h4>
+							<h4>Approach</h4>
 							<p align="justify">{{ item.problem }}</p>
 						</div>
 						<div class="col-md-4" style="margin:40px;margin-right:-230px" >
@@ -212,7 +212,7 @@ header-img: "img/home-bg.jpg"
 						<div class="col-md-7" style="margin:40px;margin-left:-200px">
 							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
 						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
-							<a href={{ item.report }}><button type="button" class="btn btn-default">Arxiv Preprint</button></div></a>
+							<a href={{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
 						</div>
 					</div>	
 				</div>
@@ -233,6 +233,46 @@ header-img: "img/home-bg.jpg"
 					<h2 style="margin:40" >{{ item.internal_title }}</h2>
 					<p align="justify">{{ item.details }}</p>
 					<center><a href={{ item.report }}><button type="button" class="btn btn-default">Presentation</button></a></center>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if item.anchor == "hand_rec" %}
+		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<div class="close-modal" data-dismiss="modal">
+					<div class="lr">
+						<div class="rl">
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<!-- Image of the project -->
+				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
+					<h2 style="margin:40" >{{ item.internal_title }}</h2>
+					<!-- Three part description -->
+					<div class="row">
+						<div class="col-md-4" style="margin:40px;margin-left:-150px">
+							<h4>Preface</h4>
+							<p align="justify">{{ item.intro }}</p>
+						</div>
+						<div class="col-md-4" style="margin:40px">
+							<h4>Sentimental Analysis</h4>
+							<p align="justify">{{ item.problem_1 }}</p>
+						</div>
+						<div class="col-md-4" style="margin:40px;margin-right:-150px" >
+							<h4>Handwriting Recognition</h4>
+							<p align="justify">{{ item.problem_2 }}</p>
+						</div>		
+					</div>
+					<div class="row">	
+					<!--  Links to report -->
+						<div class="col-md-7" style="margin:40px;margin-left:-200px">
+							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
+						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
+							<a href={{ item.report }}><button type="button" class="btn btn-default">Presentation</button></div></a>
 						</div>
 					</div>	
 				</div>
