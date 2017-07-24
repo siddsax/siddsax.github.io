@@ -14,5 +14,6 @@ It has been some time and preposterous amount of movies since we have been conte
 
 These are two of the most contrasting theories about how we shall evolve from this point and point us to be very near to it. Most of the people have given up and are waiting for the day when our resurrection happens ( until or unless a guy with shiny hair decides to blow up a nuke on someone pinching him or murder the successes of Environmentalists) and this belief has been strengthen by not only the recent research but pop culture, but have we ever even considered the former theory? The subtle one, the one with less punches and twists. 
 
-Artificial Enhancements might still not be here today but several revelations have taken a corresponding biological organs’ role without even us noticing. We already have artificial eyes, ears and limbs. Some like pacemakers are something that seems normalcy these days but they too replace a natural organ, similarly do dialysis machines. 
- 
+Artificial Enhancements might still not be here today but several revelations have taken a corresponding biological organs’ role without even us noticing. We already have artificial eyes, ears and limbs. Some like pacemakers are something that seems normalcy these days but they too replace a natural organ, similarly do dialysis machines. Whereas compared to what A.I. has done is being a tool. A tool that gives us the content relevant to us, recognises friends in our pictures or something as mundane as snapchat. The closest it has come to directly replacing a human is the autonomous cars which is driving this conversation forward. A.I. today and for some time will be a facilitator than an orchestrator. 
+
+To be continued....
