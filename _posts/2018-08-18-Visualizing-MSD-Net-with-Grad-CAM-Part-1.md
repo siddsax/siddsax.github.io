@@ -11,14 +11,6 @@ tags: [ Tech ]
 
 # Visualizing MSD-Net with Grad-CAM Part-1
 
-* Introduce the paper
-	* The problem
-	* Its novelty
-	* Question
-* Solving the question
-	* Explain the aproach
-* Code for changes
-* Results
 
 **tl;dr : This part explains how to visualize models with Grad-CAM for *any* model**
 
