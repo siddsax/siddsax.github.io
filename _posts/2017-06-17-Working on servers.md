@@ -4,7 +4,7 @@ title:      "Working on servers"
 subtitle:   "From the perspective of a Deep Learning Engineer"
 date:       2017-06-17 21:30:00
 author:     "Siddhartha Saxena"
-header-img: "img/posts/moo.jpg"
+header-img: "img/posts/moo.png"
 comments: true
 tags: [ Tech ]
 --- 
