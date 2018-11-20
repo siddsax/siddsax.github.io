@@ -6,7 +6,7 @@ date:       2017-06-17 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/moo.png"
 comments: true
-tags: [ Tech ]
+tags: [ Technical ]
 --- 
 
 Working on servers is a part-and-parcel these days with resources like GPUs being essential to Deep learning, it is essential that one can work on servers, academeic or AWS. But starting to work on them can be daunting at first and does involve a learning curve that can slow down your progress at first. So here are some tricks that I have found useful over my experience with them.

@@ -6,7 +6,7 @@ date:       2018-08-18 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/moo.jpg"
 comments: true
-tags: [ Tech, AI ]
+tags: [ Technical, AI ]
 --- 
 
 # Visualizing MSD-Net with Grad-CAM Part-1
