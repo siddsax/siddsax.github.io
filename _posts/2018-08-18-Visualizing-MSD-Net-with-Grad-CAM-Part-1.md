@@ -1,12 +1,12 @@
 ---
 layout:     post
 title:      "Visualizing MSD-Net with Grad-CAM Part-1"
-subtitle:   "Visualizing any model with Grad-CAM"
+subtitle:   "How do I use Grad-CAM for visualizing any model?"
 date:       2018-08-18 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/moo.jpg"
 comments: true
-tags: [ Technical, AI ]
+tags: [ Technical, Machine_Learning ]
 --- 
 
 # Visualizing MSD-Net with Grad-CAM Part-1
