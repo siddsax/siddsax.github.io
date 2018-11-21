@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "Dynamic Graph CNN for Learning on Point Clouds"
+subtitle:   "Paper Summary"
+date:       2018-07-01 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/moo.png"
+comments: true
+tags: [ Summaries, ML ]
+--- 
+
 # Dynamic Graph CNN for Learning on Point Clouds
 
 ## Details

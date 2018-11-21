@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "Hierarchical Long-term Video Prediction without Supervision"
+subtitle:   "Paper Summary"
+date:       2018-09-18 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/moo.png"
+comments: true
+tags: [ Summaries, ML ]
+--- 
+
 # Hierarchical Long-term Video Prediction without Supervision
 
 ## Paper Details

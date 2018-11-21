@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "Noise2Noise: Learning Image Restoration without Clean Data"
+subtitle:   "Paper Summary"
+date:       2018-07-01 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/moo.png"
+comments: true
+tags: [ Summaries, ML ]
+--- 
+
 # Noise2Noise: Learning Image Restoration without Clean Data
 
 ## Details
