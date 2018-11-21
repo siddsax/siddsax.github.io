@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "CyCADA: Cycle-Consistent Adversarial Domain Adaptation"
+subtitle:   "Paper Summary"
+date:       2017-12-07 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/moo.png"
+comments: true
+tags: [ Summaries, ML ]
+--- 
+
 # CyCADA: Cycle-Consistent Adversarial Domain Adaptation
 ## Paper Details
 

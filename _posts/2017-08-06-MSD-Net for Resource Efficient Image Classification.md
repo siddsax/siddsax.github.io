@@ -6,7 +6,7 @@ date:       2017-08-06 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/moo.png"
 comments: true
-tags: [ Summaries ]
+tags: [ Summaries, ML ]
 --- 
 
 # Multi-Scale Dense Network for Resource Efficient Image Classification

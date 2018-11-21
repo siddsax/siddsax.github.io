@@ -1,3 +1,14 @@
+---
+layout:     post
+title:      "Graphical models with neural networks for structured representations and fast inference"
+subtitle:   "Paper Summary"
+date:       2017-12-07 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/moo.png"
+comments: true
+tags: [ Summaries, ML ]
+--- 
+
 # Composing graphical models with neural networks for structured representations and fast inference
 
 ## Paper Details
