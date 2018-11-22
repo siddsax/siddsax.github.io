@@ -11,7 +11,7 @@ tags: [ Technical, ML ]
 
 # Visualizing MSD-Net with Grad-CAM Part-1
 
-![http://siddharthasaxena.com/blogImgs/catJoin.png]
+![](http://siddharthasaxena.com/blogImgs/catJoin.png)
 
 **tl;dr : This part explains how to visualize models with Grad-CAM for *any* model**
 
