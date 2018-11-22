@@ -11,6 +11,7 @@ tags: [ Technical, ML ]
 
 # Visualizing MSD-Net with Grad-CAM Part-1
 
+![http://siddharthasaxena.com/blogImgs/catJoin.png]
 
 **tl;dr : This part explains how to visualize models with Grad-CAM for *any* model**
 
@@ -63,4 +64,5 @@ img =  input[0].cpu().data.numpy().transpose(1,2,0)
 img = cv2.resize(img, (512, 512))
 show_cam_on_image(img, mask, name)
 ```
-This is how any model can be visualized wit Grad-CAM. I end this part of the article here, in the second part I'll summarize the results on MSD-Net in the next part!
+
+This leads to these beautiful visualizations such as one at the top of the blog. I end this part of the article here, in the second part I'll summarize the results on MSD-Net in the next part!
