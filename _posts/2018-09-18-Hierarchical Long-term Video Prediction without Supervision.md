@@ -35,7 +35,7 @@ needed.
 * The model is composed of multiple networks as follows ( See Fig 1 in the paper ):
     * Image Encoder: This is a CNN that encodes the frame at time step *t* to the high-level feature (**HL-F**) space. It is only used till time
 step *C* i.e. the time step up to which we have ground truth image frames and prediction starts after it.
-    * Predictor LSTM: Eq (1). This is the main predictor of the model. It takes as input the hidden layer of itself (<a href="https://www.codecogs.com/eqnedit.php?latex=H_{t-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_{t-1}" title="H_{t-1}" /></a>) and HL-F ( <a href="https://www.codecogs.com/eqnedit.php?latex=e_{t-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e_{t-1}" title="e_{t-1}" /></a>) at the previous time step. The output is the HL-F at the next time. The input HL-F (<a href="https://www.codecogs.com/eqnedit.php?latex=e_{t-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e_{t-1}" title="e_{t-1}" /></a>) here comes from the Image encoder
+    * Predictor LSTM: Eq (1). This is the main predictor of the model. It takes as input the hidden layer of itself (H_{t-1})) and HL-F (e_{t-1}) at the previous time step. The output is the HL-F at the next time. The input HL-F (e_{t-1}) here comes from the Image encoder
 till step *C* and after that is taken from the output of the LSTM at previous time step. 
     * VAN: The VAN is in turn comprised of several networks. It takes as input the predicted HL-F, say at time step *t* 
 from the LSTM and then using the *first* image and its HL-F, the VAN generates the predicted image frame at that time step.
