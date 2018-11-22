@@ -4,7 +4,7 @@ title:      "Structural-RNN: Deep Learning on Spatio-Temporal Graphs"
 subtitle:   "Paper Summary"
 date:       2017-03-05 21:30:00
 author:     "Siddhartha Saxena"
-header-img: "img/posts/moo.png"
+header-img: "img/posts/summ.jpg"
 comments: true
 tags: [ Summaries, ML ]
 --- 

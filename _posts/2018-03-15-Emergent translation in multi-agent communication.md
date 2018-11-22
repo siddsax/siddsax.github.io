@@ -4,7 +4,7 @@ title:      "Emergent translation in multi-agent communication"
 subtitle:   "Paper Summary"
 date:       2018-03-15 21:30:00
 author:     "Siddhartha Saxena"
-header-img: "img/posts/moo.png"
+header-img: "img/posts/summ.jpg"
 comments: true
 tags: [ Summaries, ML ]
 --- 

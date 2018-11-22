@@ -1,3 +1,13 @@
+---
+layout:     post
+title:      "Visualizing MSD-Net with Grad-CAM Part-2"
+subtitle:   "Assessing the quality of a model"
+date:       2018-15-18 21:30:00
+author:     "Siddhartha Saxena"
+header-img: "img/posts/gradCAM.jpg"
+comments: true
+tags: [ Technical, ML ]
+---
 
 # Visualizing MSD-Net with Grad-CAM Part-2
 
