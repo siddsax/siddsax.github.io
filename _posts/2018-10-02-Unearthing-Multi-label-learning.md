@@ -6,7 +6,7 @@ date:       2018-10-02 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/summ.jpg"
 comments: true
-tags: [ Summaries, ML ]
+tags: [ Technical, ML ]
 --- 
 
 # Unearthing Multi-label learning
@@ -69,7 +69,7 @@ python main.py --mn=rcv # train a model and save in directory rcv [inside saved_
 ```
 The above code will run for some time, simultaneosly it will also print the precision scores as below.
 
-![](http://siddharthasaxena.com/blogimgs/p1.png)
+![](http://siddharthasaxena.com/blogImgs/p1.png)
 
 So that wraps up the review of multi-label learning. Thanks for reading!
 
