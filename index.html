@@ -5,288 +5,117 @@ description: "Learner"
 header-img: "img/home-bg.jpg"
 ---
 
+
+
 <!-- About Content -->
 <!-- <link rel="stylesheet" href="button/css/style.css"> -->
+
+
 <section id="about">
-	<div style="margin-left:-100;margin-right:-100">
-		<img align="left" style="float:left;width:200px;margin-right:20px" src="img/profile.jpg">
-		<p>
-			Hi, I am an aspiring Machine Learning Researcher looking to make a dent in this tiny world. I am presently pursuing undergrad studies in the field of Computer Science at I.I.T. Kanpur. I believe in making a difference, still wondering if anything matters at all. I like to think about things and the meaning behind them hence I love to analyze stuff.
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<ul class="list-inline text-center">
+					{% if site.linkdin_name %}
+					<li>
+						<a href="https://www.linkedin.com/in/{{ site.linkdin_name }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+					{% if site.github_username %}
+					<li>
+						<a href="https://github.com/{{ site.github_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+					{% if site.facebook_username %}
+					<li>
+						<a href="https://www.facebook.com/{{ site.facebook_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+					{% if site.twitter_username %}
+					<li>
+						<a href="https://twitter.com/{{ site.twitter_username }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+					{% if site.stackoverflow_username %}
+					<li>
+						<a href="https://stackexchange.com/users/8530162/siddhartha-saxena">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+					{% if site.email %}
+					<li>
+						<a href="mailto:{{ site.email }}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>  
+		</div>
+	
+	<div style="margin-left:-100;margin-right:-100;width: 900px;">
+		<img align="left" style="float:left;width:350px;margin-right:20px" src="img/profile.jpg">
+		<p> Final Year Undergraduate Student <br>
+			Department of Computer Science <br>
+			Indian Institute of Technology (IIT) Kanpur <br>
+			siddsax at iitk dot ac dot in <br>
 		</p>
+
+		<img align="left" style="float:left;width:130px;margin-right:20px" src="img/yodlee.png">
+		<img align="left" style="float:left;width:150px" src="img/iitk.png">
+		<br>
+		<br>
+		<img style="float:left;width:200px" src="img/aalto.gif">
+		<img style="float:left;width:90px" src="img/auv.png">
+		<span style="display:block; height: 200px;"></span>
+
+		<p>
+			<h2>Bio</h2>
+		</p>
+			<font size="4">
+			I am a Final year Computer Science undergraduate student at IIT Kanpur, working with Prof Piyush Rai and Prof Vinay Namboodiri. My research interests lie at the intersection of deep learning and Bayesian modeling, leveraging the flexibility of the former and rigor and extensive nature of the latter. 
+		</p>
+
+		</p>
+			I have previously spent two wonderful semesters at Aalto University working on multi-label classification with very few labeled instances, where I came up with generative models that can leverage unlabelled data and generate new training instances that can improve the accuracies of any supervised model itself. This work is presently under review. Before that, I spent one summer eventful summer at Envestnet Yodlee, Bangalore working with the energetic Dr. Om Deshmukh on online drift analysis for instance selection in big data. This work has been filed as US Patent and is patent pending. 
+		</p>
+
+		</p>
+			In my free time, I write machine <a href="https://siddharthasaxena.com/blog"><b>blogs</b></a> ( see the top right corner of this site) and tutorials, for which the code base are available at my <a href="https://github.com/siddsax"><b>Github</b></a>. I have open-sourced codebases for replicating several research papers while working on research projects. While the code-bases for my original research are published as the corresponding work gets published, on my GitHub. I also write paper summaries to keep myself motivated to read more papers and also help others on the side :) that can be found <a href="https://github.com/siddsax/paperSum"><b>here</b></a>. I was also part of IIT Kanpur's Autonomous Underwater Vehicle team building the first vehicle <a href="https://github.com/AUV-IITK/Varun-Software"><b>'Varun'</b></a> that came in 2nd at NIOT SAVe. While I devoted 3 years of my undergraduate years being part of the awesome journalism body here at IIT Kanpur, Vox Populi later serving as an Editor.
+			</font>
+		</p>
+		<!-- </p>
 		<p>
 			Apart from that, I am avid FC Barcelona, as can be seen from the favicon of this site. I like to read articles, write for Vox Populi, IITK's Journalism Body and cherish suspense thrillers.
 		</p>
 		<p>
 			Check-out my <b>blog</b> from by clicking on the button at the top right, maybe somthing might pique your interest! I also write machine learning research paper summaries, that are consisely present <a href="https://github.com/siddsax/paperSum">here</a> while codes to replicate some of my tutorials can also be found on my <a href="https://github.com/siddsax">Github</a>. 
-		</p>
+		</p> -->
 	</div>
 </section>
-
-<!-- Portfolio Grid Section -->
-<section id="portfolio">
-	<div class="row">
-		<div class="text-center">
-			<h2>Here are my past Projects and Internships.</h2>
-			<hr>
-		</div>
-	</div>
-
-	<div class="row">
-		{% for item in site.portfolio %}
-		<div class="col-sm-4 portfolio-item">
-			<a href="#{{ item.anchor }}" class="portfolio-link" data-keyboard="true" data-toggle="modal">
-				<div class="caption" >
-					<div class="caption-content" >
-						{{ item.title }}<p></p>
-						<i class="fa fa-search-plus"></i><p></p>
-						Category: {{ item.category }}
-					</div>
-				</div>
-				<img src="{{ item.image }}" width="300" >
-			<!-- class="img-responsive" alt="" -->
-			</a>
-		</div>
-		{% endfor %}
-	</section>
-
-	<!-- Portfolio Modals -->
-	<section id="portfolio modals" background="img/proj-bg.jpg">
-
-		{% for item in site.portfolio %}
-		{% if item.anchor == "yodlee" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<!-- Image of the project -->
-				  <center><img src="{{ item.image_rec }}" width="500"></center>
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<!-- Three part description -->
-					<div class="row">
-						<div class="col-md-5" style="margin:40px;margin-left:-230px">
-							<h4>Preface</h4>
-							<p align="justify">{{ item.intro }}</p>
-						</div>
-						<div class="col-md-5" style="margin:40px">
-							<h4>Problem</h4>
-							<p align="justify">{{ item.problem }}</p>
-						</div>
-						<div class="col-md-5" style="margin:40px;margin-right:-230px" >
-							<h4>Results</h4>
-							<p align="justify">{{ item.results }}</p>
-						</div>		
-					</div>
-					<div class="row">	
-					<!--  Links to report -->
-						<div class="col-md-7" style="margin:40px;margin-left:-200px">
-							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
-							<a href={{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% if item.anchor == "flows" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<!-- Image of the project -->
-				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<!-- Three part description -->
-					<div class="row">
-						<div class="col-md-4" style="margin:40px;margin-left:-230px">
-							<h4>Preface</h4>
-							<p align="justify">{{ item.intro }}</p>
-						</div>
-						<div class="col-md-6" style="margin:40px">
-							<h4>Abstract</h4>
-							<p align="justify">{{ item.problem }}</p>
-						</div>
-						<div class="col-md-4" style="margin:40px;margin-right:-230px" >
-							<h4>Results</h4>
-							<p align="justify">{{ item.results }}</p>
-						</div>		
-					</div>
-					<div class="row">	
-					<!--  Links to report -->
-						<div class="col-md-7" style="margin:40px;margin-left:-200px">
-							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
-							<a href={{ item.report }}><button type="button" class="btn btn-default">Arxiv Preprint</button></div></a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% if item.anchor == "auv" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<!-- Image of the project -->
-				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<!-- Three part description -->
-					<div class="row">
-						<div class="col-md-5" style="margin:40px;margin-left:-230px">
-							<h4>Preface</h4>
-							<p align="justify">{{ item.intro }}</p>
-						</div>
-						<div class="col-md-5" style="margin:40px">
-							<h4>Abstract</h4>
-							<p align="justify">{{ item.problem }}</p>
-						</div>
-						<div class="col-md-5" style="margin:40px;margin-right:-230px" >
-							<h4>Results</h4>
-							<p align="justify">{{ item.results }}</p>
-						</div>		
-					</div>
-					<div class="row">	
-					<!--  Links to report -->
-						<div class="col-md-5" style="margin:40px;margin-left:-250px">
-							<a href= {{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
-						<div class="col-md-5" style="margin:40px">
-							<a href= {{ item.utube }}><button type="button" class="btn btn-default">Youtube</button></div></a>
-						<div class="col-md-5" style="margin:40px;margin-right:-250px">
-							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-left:-150px">
-							<a href= {{ item.website }}><button type="button" class="btn btn-default">Website</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-right:-150px">	
-							<a href={{ item.ppt }}><button type="button" class="btn btn-default">Presentation</button></div></a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% if item.anchor == "docclustering" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<!-- Image of the project -->
-				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<!-- Three part description -->
-					<div class="row">
-						<div class="col-md-4" style="margin:40px;margin-left:-230px">
-							<h4>Preface</h4>
-							<p align="justify">{{ item.intro }}</p>
-						</div>
-						<div class="col-md-6" style="margin:40px">
-							<h4>Approach</h4>
-							<p align="justify">{{ item.problem }}</p>
-						</div>
-						<div class="col-md-4" style="margin:40px;margin-right:-230px" >
-							<h4>Results</h4>
-							<p align="justify">{{ item.results }}</p>
-						</div>		
-					</div>
-					<div class="row">	
-					<!--  Links to report -->
-						<div class="col-md-7" style="margin:40px;margin-left:-200px">
-							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
-							<a href={{ item.report }}><button type="button" class="btn btn-default">Report</button></div></a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% if item.category == "Talk" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<center><img src="{{ item.image }}" width="500"></center>
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<p align="justify">{{ item.details }}</p>
-					<center><a href={{ item.report }}><button type="button" class="btn btn-default">Presentation</button></a></center>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% if item.anchor == "hand_rec" %}
-		<div class="portfolio-modal modal fade" id="{{ item.anchor }}" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content">
-				<div class="close-modal" data-dismiss="modal">
-					<div class="lr">
-						<div class="rl">
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<!-- Image of the project -->
-				  <!-- <center><img src="{{ item.image_rec }}" width="500"></center> -->
-					<h2 style="margin:40" >{{ item.internal_title }}</h2>
-					<!-- Three part description -->
-					<div class="row">
-						<div class="col-md-4" style="margin:40px;margin-left:-150px">
-							<h4>Preface</h4>
-							<p align="justify">{{ item.intro }}</p>
-						</div>
-						<div class="col-md-4" style="margin:40px">
-							<h4>Sentimental Analysis</h4>
-							<p align="justify">{{ item.problem_1 }}</p>
-						</div>
-						<div class="col-md-4" style="margin:40px;margin-right:-150px" >
-							<h4>Handwriting Recognition</h4>
-							<p align="justify">{{ item.problem_2 }}</p>
-						</div>		
-					</div>
-					<div class="row">	
-					<!--  Links to report -->
-						<div class="col-md-7" style="margin:40px;margin-left:-200px">
-							<a href= {{ item.code }}><button type="button" class="btn btn-default">Code</button></div></a>
-						<div class="col-md-7" style="margin:40px;margin-right:-200px">	
-							<a href={{ item.report }}><button type="button" class="btn btn-default">Presentation</button></div></a>
-						</div>
-					</div>	
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% endfor %}
-	</section>
-<!-- 
-    {% assign i = forloop.index | modulo:5 %}
-    <h2>{{ i }}</h2>
-  	{% if i == 4 %}
-  		<img src="as" align="left" width="300">
-	    <h2>{{ i }}</h2>
-		{% endif %}
-
- -->
