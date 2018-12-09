@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Visualizing MSD-Net with Grad-CAM Part-2"
-subtitle:   "Assessing the quality of a model"
+title:      "Visualizing MSD-Net with Grad-CAM Part-2."
+subtitle:   "Assessing the quality of a model."
 date:       2018-08-21 21:30:00
 author:     "Siddhartha Saxena"
 header-img: "img/posts/gradCAM.jpg"
@@ -20,7 +20,7 @@ We use the Cifar-10 dataset for experimentation which is an image classification
 ![](http://siddharthasaxena.com/blogImgs/accMSDnet.png)   
 -------------------------------------------------- **Fig 1** ----------------------------------------------------
 
-The performance of classifiers generally improves as the number of blocks increase. This makes sense as an increase in the number of blocks, also means more parameters. Although, the best classifier on average is **B6** (after 6 blocks). This is possibly due to the fact that as the number of blocks increase, overfitting becomes more prominent.  
+The performance of classifiers generally improves as the number of blocks increase. This makes sense as an increase in the number of blocks, also means more parameters. Although, the best classifier on average is **B6** (after six blocks). This is possibly because as the number of blocks increase, overfitting becomes more prominent.  
 
 Now let's see some images of dogs ---- visualized with Grad-CAM!
 
@@ -30,9 +30,9 @@ In Fig 2, we have several images of dogs that are correctly/incorrectly classifi
 
 The key points to note here as follows:
 
-* Higher the number of parameters, higher is the attention span of the model. This can be seen from Fig 2 where the heatmaps spread over a larger region in case of blocks 5 and 10 opposed to 1 and 3. Clearly, this is one of the contributing factors to misclassification by B1 and B3
+* Higher the number of parameters, higher is the attention span of the model. This can be seen from Fig 2 where the heatmaps spread over a larger region in case of blocks 5 and ten opposed to 1 and 3. This is one of the contributing factors to misclassification by B1 and B3
 * The attention spans of B10 and B5 are more similar to each other as compared to those of B1 and B3 in spite of the former having more blocks between them. This convergence of visual spans corroborates with the convergence of accuracies in Fig 1. Giving us further proof that model performance is linked to the Grad-CAM visualizations.
-* Each classifier has its own set of characteristics as it classifies objects. For example, B10 attends over the whole while B5 mostly tries to find legs. This also hints at which classifier can be a better judge for a given class. If a classifier attends to more discriminative features with respect to that object, then it is likely that it will outperform a model that does not.
+* Each classifier has its own set of characteristics as it classifies objects. For example, B10 attends over the whole while B5 mostly tries to find legs. This also hints at which classifier can be a better judge for a given class. If a classifier attends to more discriminative features concerning that object, then it is likely that it will outperform a model that does not.
 * To explain it further, consider the class 'truck'. The attention span of B10 over the back of the truck ( albeit a large portion ) while the classifier B5 looks at small parts of the front and back of the truck. The later set of features are much more discriminative, leading to the superior performance of B5 over B10, summarized in Table 1.
 
 | B1 | B2 | B3 | B4 | B5 | B6 | B7 | B8 | B9 | B10 |

@@ -9,25 +9,25 @@ comments: true
 tags: [ Survey, Vox ]
 --- 
 
-Vox Populi had conducted a survey to take a glimpse into Kota's coaching culture which was answered by 212 students of IIT Kanpur who had previously studied at a coaching institute in Kota. In this report, Vox presents to you some interesting findings from the survey.
+Vox Populi had surveyed to take a glimpse into Kota's coaching culture which was answered by 212 students of IIT Kanpur who had previously studied at a coaching institute in Kota. In this report, Vox presents to you some interesting findings from the survey.
 
 Kota, a small city in Rajasthan, once known for its industries, makes national news every year for sending thousands of students from different parts of the country to top engineering and medical colleges.
 
 Kota and, in general, the coaching industry has taken deep roots in our education ecosystem which has been troubling the government for long now. To tackle the problem, the Ministry of Human Resource Development (MHRD) is coming up with a mobile app and portal containing free lectures from IIT faculty on various subjects and previous years’ question papers. MHRD has taken some steps in the past too which failed to make any difference to the rise of coaching industry in Kota. What is attracting students from all over India to the coaching institutes in Kota?
 
-Why did you join a coaching Institute in Kota ?
+Why did you join a coaching Institute in Kota?
 
 <img align="middle" style="float: center;width:500px;margin-left:200px" src="
 https://docs.google.com/spreadsheets/d/1nBPQ_goSvjRWUWPr1LfRosTIibVTgJx18UazQ9jREO0/pubchart?oid=990793022&format=image
 ">
-Almost two-thirds of survey respondents came to Kota to escape the conventional schooling system – which they considered either inadequate or a deterrent to the primary goal of “cracking” JEE. Saim Dawood Wani, a student of the freshmen batch (Y16), opines, “Only a meagre number of students in Kota come from large cities and towns. Many of the children who go there after matriculation (or before that) have had little exposure to 'quality education', a rare commodity in our school system. As a result, they end up developing a high regard for Kota 'style of coaching'.” The proven track record of Kota students in competitive exams also plays a significant role with 22.6% citing success stories of relatives and acquaintances as their reason for moving to Kota. Surprisingly, advertisements of mass selections seem to be only a minor factor(6.1%) compared to others, and so does parental pressure(1.9%).
+Almost two-thirds of survey respondents came to Kota to escape the conventional schooling system – which they considered either inadequate or a deterrent to the primary goal of “cracking” JEE. Saim Dawood Wani, a student of the freshmen batch (Y16), opines, “Only a meager number of students in Kota come from large cities and towns. Many of the children who go there after matriculation (or before that) have had little exposure to 'quality education,' a rare commodity in our school system. As a result, they end up developing high regard for Kota 'style of coaching'.” The proven track record of Kota students in competitive exams also plays a significant role with 22.6% citing success stories of relatives and acquaintances as their reason for moving to Kota. Surprisingly, advertisements of mass selections seem to be only a minor factor(6.1%) compared to others, and so does parental pressure(1.9%).
 
 It has long been argued that poor quality of education in Indian schools pushes students to leave their homes and join coaching institutions in Kota. Survey findings support the claim as 94% of the students stated that coaching institute teachers are better than school teachers
 
 <img align="middle" style="float: center;width:500px;margin-left:200px" src="
 https://docs.google.com/spreadsheets/d/1WCCL9IHWk1cvsWVaL-OheRSg9zB1jwlLQ7-g6nsm5fs/pubchart?oid=707861154&format=image">
 
-This leads us to another question, that is how IITK professors fare when compared to Kota faculty? Three-fourths of the respondents believe that the faculty in Kota’s coaching institutions are better at teaching. Well, professors may be renowned stalwarts in research but then, teaching is a different art.
+This leads us to another question, that is how IITK professors fare when compared to Kota faculty? Three-fourths of the respondents believe that the faculty in Kota’s coaching institutions are better at teaching. Well, professors may be renowned stalwarts in research, but then, education is a different art.
 
 <img align="middle" style="float: center;width:500px;margin-left:200px" src="
 https://docs.google.com/spreadsheets/d/1jC0sIWG7WPjAWbY-rSWE5O9I7rgB8znQPtD6DmILNGc/pubchart?oid=514327175&format=image">
@@ -38,7 +38,7 @@ Let us now take a sneak peek into the life of students at Kota. The survey shows
 https://docs.google.com/spreadsheets/d/1PWmEhMJFub8wNdGh1d6VIDA2movYdq3IKK24CaPl2xA/pubchart?oid=830997162&format=image
 ">
 
-The students who joined Kota’s coaching institution after completing 12th standard stood at 17.9%. 11% of students entered this competitive environment even before they had enrolled in 11th standard. 28.1% of students from Kota joined coaching before 11th standard which was found to be around 4 times the percentage of such students from other cities (7.8%).
+The students who joined Kota’s coaching institution after completing 12th standard stood at 17.9%. 11% of students entered this competitive environment even before they had enrolled in 11th standard. 28.1% of students from Kota joined coaching before 11th standard which was found to be around four times the percentage of such students from other cities (7.8%).
 
 
 <img align="middle" style="float: center;width:500px;margin-left:200px" src="
